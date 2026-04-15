@@ -53,6 +53,24 @@
       min-height: 100vh;
     }
 
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #111;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
     .page {
       width: min(100% - 32px, var(--max));
       margin: 0 auto;
@@ -219,6 +237,19 @@
 
     .footer p { margin: 0; }
 
+    a:focus-visible {
+      outline: 3px solid rgba(255, 10, 120, 0.5);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
     @media (max-width: 760px) {
       .page { padding-top: 24px; }
       .hero {
@@ -320,11 +351,12 @@
   </script>
 </head>
 <body>
-  <main class="page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" class="page">
     <section class="card" aria-label="Official website landing page">
       <div class="hero">
         <div class="mark-wrap">
-          <img class="mark" src="/logo-ep.png" alt="EP monogram logo" />
+          <img class="mark" src="/logo-ep.png" alt="EP monogram logo" width="90" height="90" decoding="async" />
         </div>
         <div>
           <div class="eyebrow">Official Website</div>
@@ -339,33 +371,33 @@
       <div class="section">
         <h2 class="section-title">Verified Profiles & Organizations</h2>
         <nav class="links" aria-label="Primary links">
-          <a class="primary" href="https://www.chalmersposton.com/" rel="me">Chalmers Poston, LLC</a>
-          <a href="https://www.linkedin.com/in/realericposton" rel="me">LinkedIn</a>
-          <a href="https://x.com/realericposton" rel="me">X</a>
-          <a href="https://www.instagram.com/realericposton" rel="me">Instagram</a>
-          <a href="https://www.facebook.com/realericposton" rel="me">Facebook</a>
-          <a href="https://thepostonfoundation.org" rel="me">The Poston Foundation</a>
-          <a href="https://chakhead.com" rel="me">Chakhead</a>
-          <a href="https://postonpreserve.com" rel="me">Poston Preserve</a>
+          <a class="primary" href="https://www.chalmersposton.com/" rel="me noopener noreferrer" target="_blank">Chalmers Poston, LLC</a>
+          <a href="https://www.linkedin.com/in/realericposton" rel="me noopener noreferrer" target="_blank">LinkedIn</a>
+          <a href="https://x.com/realericposton" rel="me noopener noreferrer" target="_blank">X</a>
+          <a href="https://www.instagram.com/realericposton" rel="me noopener noreferrer" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/realericposton" rel="me noopener noreferrer" target="_blank">Facebook</a>
+          <a href="https://thepostonfoundation.org" rel="me noopener noreferrer" target="_blank">The Poston Foundation</a>
+          <a href="https://chakhead.com" rel="me noopener noreferrer" target="_blank">Chakhead</a>
+          <a href="https://postonpreserve.com" rel="me noopener noreferrer" target="_blank">Poston Preserve</a>
         </nav>
       </div>
 
       <div class="section">
         <h2 class="section-title">Google Books & Publications</h2>
         <div class="book-grid" aria-label="Books by Eric Chalmers Poston">
-          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ">
+          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ" rel="noopener noreferrer" target="_blank">
             <p class="book-title">Rooted In The Pee Dee: The History Of Poston, South Carolina And Its Founding Family</p>
             <p class="book-meta">Google Play Books</p>
           </a>
-          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ">
+          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ" rel="noopener noreferrer" target="_blank">
             <p class="book-title">Honoring the Legacy of Lieutenant Colonel John Fleetwood Moody: Veteran, Aviator, Author</p>
             <p class="book-meta">Google Play Books</p>
           </a>
-          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ">
+          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ" rel="noopener noreferrer" target="_blank">
             <p class="book-title">A Poston Family of South Carolina: Its Immigrant Ancestor and Some of His Descendants: Revised, Authenticated &amp; Updated 2025 Edition</p>
             <p class="book-meta">Google Books</p>
           </a>
-          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Esq_A_Poston_Family_of_South?id=rNaDEQAAQBAJ">
+          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Esq_A_Poston_Family_of_South?id=rNaDEQAAQBAJ" rel="noopener noreferrer" target="_blank">
             <p class="book-title">A Poston Family Of South Carolina (Second Edition): A Family Genealogy — Second Edition, Revised, Authenticated, and Updated (2025)</p>
             <p class="book-meta">Google Play Books</p>
           </a>
