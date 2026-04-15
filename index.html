@@ -198,6 +198,12 @@
       transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
     }
 
+    .links a:focus-visible,
+    .book:focus-visible {
+      outline: 3px solid rgba(255, 10, 120, 0.35);
+      outline-offset: 2px;
+    }
+
     .links a.primary {
       background: var(--accent);
       border-color: var(--accent);
@@ -320,6 +326,18 @@
         grid-template-columns: 1fr;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .links a,
+      .book {
+        transition: none;
+      }
+      .links a:hover,
+      .book:hover {
+        transform: none;
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -411,7 +429,7 @@
             Official website of Eric Chalmers Poston. This page consolidates verified professional profiles, organizations, and selected books authored by Eric Chalmers Poston.
           </p>
         </div>
-      </div>
+      </header>
 
       <div class="section">
         <h2 class="section-title">Verified Profiles & Organizations</h2>
@@ -449,9 +467,9 @@
         </div>
       </div>
 
-      <div class="footer">
+      <footer class="footer">
         <p>Columbia, South Carolina</p>
-      </div>
+      </footer>
     </section>
   </main>
 </body>
