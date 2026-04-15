@@ -39,6 +39,18 @@
       --max: 980px;
     }
 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d0f14;
+        --card: #121621;
+        --text: #f4f6fb;
+        --muted: #a6adbb;
+        --line: #2a3140;
+        --soft: #171d2a;
+        --shadow: 0 22px 56px rgba(0, 0, 0, 0.42);
+      }
+    }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -51,6 +63,23 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
       line-height: 1.55;
       min-height: 100vh;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .skip-link:focus-visible {
+      left: 12px;
     }
 
     .page {
@@ -198,6 +227,11 @@
       box-shadow: 0 10px 24px rgba(17,17,17,0.06);
     }
 
+    a:focus-visible {
+      outline: 3px solid color-mix(in oklab, var(--accent) 80%, white 20%);
+      outline-offset: 2px;
+    }
+
     .book-title {
       margin: 0 0 8px;
       font-size: 1rem;
@@ -218,6 +252,14 @@
     }
 
     .footer p { margin: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
 
     @media (max-width: 760px) {
       .page { padding-top: 24px; }
@@ -320,7 +362,8 @@
   </script>
 </head>
 <body>
-  <main class="page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" class="page">
     <section class="card" aria-label="Official website landing page">
       <div class="hero">
         <div class="mark-wrap">
@@ -339,14 +382,14 @@
       <div class="section">
         <h2 class="section-title">Verified Profiles & Organizations</h2>
         <nav class="links" aria-label="Primary links">
-          <a class="primary" href="https://www.chalmersposton.com/" rel="me">Chalmers Poston, LLC</a>
-          <a href="https://www.linkedin.com/in/realericposton" rel="me">LinkedIn</a>
-          <a href="https://x.com/realericposton" rel="me">X</a>
-          <a href="https://www.instagram.com/realericposton" rel="me">Instagram</a>
-          <a href="https://www.facebook.com/realericposton" rel="me">Facebook</a>
-          <a href="https://thepostonfoundation.org" rel="me">The Poston Foundation</a>
-          <a href="https://chakhead.com" rel="me">Chakhead</a>
-          <a href="https://postonpreserve.com" rel="me">Poston Preserve</a>
+          <a class="primary" href="https://www.chalmersposton.com/" rel="me noopener noreferrer" target="_blank">Chalmers Poston, LLC</a>
+          <a href="https://www.linkedin.com/in/realericposton" rel="me noopener noreferrer" target="_blank">LinkedIn</a>
+          <a href="https://x.com/realericposton" rel="me noopener noreferrer" target="_blank">X</a>
+          <a href="https://www.instagram.com/realericposton" rel="me noopener noreferrer" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/realericposton" rel="me noopener noreferrer" target="_blank">Facebook</a>
+          <a href="https://thepostonfoundation.org" rel="me noopener noreferrer" target="_blank">The Poston Foundation</a>
+          <a href="https://chakhead.com" rel="me noopener noreferrer" target="_blank">Chakhead</a>
+          <a href="https://postonpreserve.com" rel="me noopener noreferrer" target="_blank">Poston Preserve</a>
         </nav>
       </div>
 
