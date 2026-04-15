@@ -19,12 +19,12 @@
   <meta property="og:title" content="Eric Chalmers Poston" />
   <meta property="og:description" content="Official website of Eric Chalmers Poston, attorney, founder, author, and researcher." />
   <meta property="og:url" content="https://ericposton.com/" />
-  <meta property="og:image" content="https://ericposton.com/favicon.png" />
+  <meta property="og:image" content="https://ericposton.com/ericposton-logo.jpeg" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Eric Chalmers Poston" />
   <meta name="twitter:description" content="Official website of Eric Chalmers Poston, attorney, founder, author, and researcher." />
-  <meta name="twitter:image" content="https://ericposton.com/favicon.png" />
+  <meta name="twitter:image" content="https://ericposton.com/ericposton-logo.jpeg" />
 
   <style>
     :root {
@@ -39,6 +39,18 @@
       --shadow: 0 18px 48px rgba(17, 17, 17, 0.08);
       --radius: 24px;
       --max: 980px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d0f14;
+        --card: #121621;
+        --text: #f4f6fb;
+        --muted: #a6adbb;
+        --line: #2a3140;
+        --soft: #171d2a;
+        --shadow: 0 22px 56px rgba(0, 0, 0, 0.42);
+      }
     }
 
     * { box-sizing: border-box; }
@@ -62,6 +74,23 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
       line-height: 1.55;
       min-height: 100vh;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .skip-link:focus-visible {
+      left: 12px;
     }
 
     .page {
@@ -90,8 +119,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 120px;
-      height: 120px;
+      width: 100%;
+      height: 100%;
       border-radius: 28px;
       background: linear-gradient(180deg, #ffffff 0%, #fff4fa 100%);
       border: 1px solid rgba(255, 10, 120, 0.14);
@@ -99,7 +128,7 @@
 
     .mark {
       width: 90px;
-      height: auto;
+      height: 90px;
       display: block;
     }
 
@@ -232,6 +261,11 @@
       box-shadow: 0 10px 24px rgba(17,17,17,0.06);
     }
 
+    a:focus-visible {
+      outline: 3px solid color-mix(in oklab, var(--accent) 80%, white 20%);
+      outline-offset: 2px;
+    }
+
     .book-title {
       margin: 0 0 8px;
       font-size: 1rem;
@@ -253,6 +287,14 @@
 
     .footer p { margin: 0; }
 
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
     @media (max-width: 760px) {
       .page { padding-top: 24px; }
       .hero {
@@ -262,8 +304,8 @@
         padding: 32px 24px 20px;
       }
       .mark-wrap {
-        width: 108px;
-        height: 108px;
+        width: 100%;
+        height: 100%;
         margin: 0 auto;
       }
       .section,
@@ -359,7 +401,7 @@
     <section class="card" aria-label="Official website landing page">
       <div class="hero">
         <div class="mark-wrap">
-          <img class="mark" src="/logo-ep.png" alt="EP monogram logo" width="90" height="90" fetchpriority="high" decoding="async" />
+          <img class="mark" src="/ericposton-logo.jpeg" alt="EP monogram logo" />
         </div>
         <div>
           <div class="eyebrow">Official Website</div>
