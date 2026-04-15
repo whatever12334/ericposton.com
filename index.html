@@ -7,6 +7,8 @@
   <meta name="description" content="Official website of Eric Chalmers Poston, attorney, founder, author, and researcher. Includes verified profiles and selected books." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="author" content="Eric Chalmers Poston" />
   <link rel="canonical" href="https://ericposton.com/" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -53,6 +55,15 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
     body {
       margin: 0;
       background:
@@ -209,6 +220,29 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
+
+    a:focus-visible {
+      outline: 3px solid rgba(255, 10, 120, 0.45);
+      outline-offset: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      z-index: 999;
+      background: #111;
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
 
     .book {
       display: block;
