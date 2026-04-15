@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ericposton.com/sitemap.xml
