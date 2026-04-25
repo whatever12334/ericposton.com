@@ -255,63 +255,120 @@
         "@id": "https://ericposton.com/#website",
         "url": "https://ericposton.com/",
         "name": "Eric Chalmers Poston",
+        "description": "Official website of Eric Chalmers Poston.",
+        "inLanguage": "en-US",
         "publisher": { "@id": "https://ericposton.com/#person" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://ericposton.com/#webpage",
+        "url": "https://ericposton.com/",
+        "name": "Eric Chalmers Poston",
+        "description": "Official website of Eric Chalmers Poston, attorney, founder, author, and researcher.",
+        "isPartOf": { "@id": "https://ericposton.com/#website" },
+        "about": { "@id": "https://ericposton.com/#person" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://ericposton.com/favicon.png"
+        },
+        "mainEntity": { "@id": "https://ericposton.com/#person" },
+        "inLanguage": "en-US"
       },
       {
         "@type": "Person",
         "@id": "https://ericposton.com/#person",
         "name": "Eric Chalmers Poston",
+        "givenName": "Eric",
+        "additionalName": "Chalmers",
+        "familyName": "Poston",
         "alternateName": ["Eric Poston"],
         "url": "https://ericposton.com/",
-        "image": "https://ericposton.com/favicon.png",
+        "mainEntityOfPage": { "@id": "https://ericposton.com/#webpage" },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://ericposton.com/favicon.png"
+        },
         "jobTitle": ["Attorney", "Founder", "Author", "Researcher"],
         "description": "Eric Chalmers Poston is an attorney, founder, author, and researcher.",
         "sameAs": [
           "https://x.com/realericposton",
           "https://facebook.com/realericposton",
           "https://instagram.com/realericposton",
+          "https://linkedin.com/in/realericposton",
           "https://chalmersposton.com",
           "https://thepostonfoundation.org",
           "https://chakhead.com",
-          "https://postonpreserve.com",
-          "https://linkedin.com/in/realericposton"
+          "https://postonpreserve.com"
         ],
         "authorOf": [
-          { "@id": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ" },
-          { "@id": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ" },
-          { "@id": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ" },
-          { "@id": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Esq_A_Poston_Family_of_South?id=rNaDEQAAQBAJ" }
+          { "@id": "https://ericposton.com/#book-rooted-in-the-pee-dee" },
+          { "@id": "https://ericposton.com/#book-honoring-the-legacy-of-lieutenant-colonel-john-fleetwood-moody" },
+          { "@id": "https://ericposton.com/#book-a-poston-family-of-south-carolina-2025" },
+          { "@id": "https://ericposton.com/#book-a-poston-family-of-south-carolina-second-edition-2025" }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://ericposton.com/#books",
+        "name": "Selected books by Eric Chalmers Poston",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 4,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": { "@id": "https://ericposton.com/#book-rooted-in-the-pee-dee" }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": { "@id": "https://ericposton.com/#book-honoring-the-legacy-of-lieutenant-colonel-john-fleetwood-moody" }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": { "@id": "https://ericposton.com/#book-a-poston-family-of-south-carolina-2025" }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": { "@id": "https://ericposton.com/#book-a-poston-family-of-south-carolina-second-edition-2025" }
+          }
         ]
       },
       {
         "@type": "Book",
-        "@id": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ",
+        "@id": "https://ericposton.com/#book-rooted-in-the-pee-dee",
         "name": "Rooted In The Pee Dee: The History Of Poston, South Carolina And Its Founding Family",
         "url": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ",
+        "sameAs": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ",
         "author": { "@id": "https://ericposton.com/#person" },
         "inLanguage": "en"
       },
       {
         "@type": "Book",
-        "@id": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ",
+        "@id": "https://ericposton.com/#book-honoring-the-legacy-of-lieutenant-colonel-john-fleetwood-moody",
         "name": "Honoring the Legacy of Lieutenant Colonel John Fleetwood Moody: Veteran, Aviator, Author",
         "url": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ",
+        "sameAs": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ",
         "author": { "@id": "https://ericposton.com/#person" },
         "inLanguage": "en"
       },
       {
         "@type": "Book",
-        "@id": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ",
+        "@id": "https://ericposton.com/#book-a-poston-family-of-south-carolina-2025",
         "name": "A Poston Family of South Carolina: Its Immigrant Ancestor and Some of His Descendants: Revised, Authenticated & Updated 2025 Edition",
         "url": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ",
+        "sameAs": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ",
         "author": { "@id": "https://ericposton.com/#person" },
         "inLanguage": "en"
       },
       {
         "@type": "Book",
-        "@id": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Esq_A_Poston_Family_of_South?id=rNaDEQAAQBAJ",
+        "@id": "https://ericposton.com/#book-a-poston-family-of-south-carolina-second-edition-2025",
         "name": "A Poston Family Of South Carolina (Second Edition): A Family Genealogy — Second Edition, Revised, Authenticated, and Updated (2025)",
         "url": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Esq_A_Poston_Family_of_South?id=rNaDEQAAQBAJ",
+        "sameAs": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Esq_A_Poston_Family_of_South?id=rNaDEQAAQBAJ",
         "author": { "@id": "https://ericposton.com/#person" },
         "inLanguage": "en"
       }
