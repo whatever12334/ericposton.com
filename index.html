@@ -1,247 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Eric Chalmers Poston</title>
-  <meta name="description" content="Official website of Eric Chalmers Poston, attorney, founder, author, and researcher. Includes verified profiles and selected books." />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Eric Chalmers Poston | Author, Attorney & South Carolina Native</title>
+  <meta name="description" content="Official website and public link index for Eric Chalmers Poston: author, attorney, South Carolina native, public profiles, publications, social media, and affiliated organizations." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light" />
   <link rel="canonical" href="https://ericposton.com/" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="/logo-ep.png" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Eric Chalmers Poston" />
-  <meta property="og:description" content="Official website of Eric Chalmers Poston, attorney, founder, author, and researcher." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Eric Chalmers Poston" />
+  <meta property="og:title" content="Eric Chalmers Poston | Author, Attorney & Public Link Index" />
+  <meta property="og:description" content="Official website and public link index for Eric Chalmers Poston, including social profiles, publications, affiliated organizations, and professional references." />
   <meta property="og:url" content="https://ericposton.com/" />
   <meta property="og:image" content="https://ericposton.com/favicon.png" />
+  <meta property="og:image:alt" content="Eric Chalmers Poston official website logo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Eric Chalmers Poston" />
-  <meta name="twitter:description" content="Official website of Eric Chalmers Poston, attorney, founder, author, and researcher." />
+  <meta name="twitter:title" content="Eric Chalmers Poston | Author, Attorney & Public Link Index" />
+  <meta name="twitter:description" content="Official website and public link index for Eric Chalmers Poston." />
   <meta name="twitter:image" content="https://ericposton.com/favicon.png" />
 
   <style>
     :root {
       --bg: #ffffff;
+      --bg-soft: #fbfbfc;
       --card: #ffffff;
       --text: #111111;
       --muted: #5f6368;
-      --line: #e9eaee;
-      --soft: #f7f7f8;
+      --muted-strong: #3f444a;
+      --line: #e8e9ee;
+      --soft: #f6f7f9;
       --accent: #ff0a78;
-      --accent-dark: #cf005f;
-      --shadow: 0 18px 48px rgba(17, 17, 17, 0.08);
-      --radius: 24px;
-      --max: 980px;
+      --accent-dark: #ca005c;
+      --accent-soft: #fff0f7;
+      --shadow: 0 18px 54px rgba(17, 17, 17, 0.08);
+      --shadow-soft: 0 10px 30px rgba(17, 17, 17, 0.055);
+      --radius: 26px;
+      --radius-sm: 18px;
+      --max: 1120px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at top left, rgba(255, 10, 120, 0.08), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(255, 10, 120, 0.06), transparent 24%),
-        var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
-      line-height: 1.55;
       min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 10, 120, 0.09), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(255, 10, 120, 0.06), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #fbfbfc 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      line-height: 1.58;
+      text-rendering: optimizeLegibility;
     }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 3px solid rgba(255, 10, 120, 0.35);
+      outline-offset: 4px;
+      border-radius: 12px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -48px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--text);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      transition: top 0.15s ease;
+    }
+
+    .skip-link:focus { top: 16px; }
 
     .page {
       width: min(100% - 32px, var(--max));
       margin: 0 auto;
-      padding: 56px 0 48px;
+      padding: 32px 0 48px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+      padding: 10px 2px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+    }
+
+    .brand img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      color: var(--muted-strong);
+      font-size: 0.94rem;
+      font-weight: 650;
+    }
+
+    .topnav a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .topnav a:hover {
+      border-bottom-color: var(--accent);
+      color: var(--text);
     }
 
     .card {
-      background: var(--card);
+      background: rgba(255, 255, 255, 0.94);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow: hidden;
+      backdrop-filter: blur(8px);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 28px;
+      grid-template-columns: 138px 1fr;
+      gap: 34px;
       align-items: center;
-      padding: 42px 42px 24px;
+      padding: 52px;
+      border-bottom: 1px solid var(--line);
     }
 
     .mark-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 120px;
-      height: 120px;
-      border-radius: 28px;
-      background: linear-gradient(180deg, #ffffff 0%, #fff4fa 100%);
-      border: 1px solid rgba(255, 10, 120, 0.14);
+      width: 138px;
+      height: 138px;
+      border-radius: 32px;
+      background: linear-gradient(180deg, #ffffff 0%, #fff3f9 100%);
+      border: 1px solid rgba(255, 10, 120, 0.16);
+      box-shadow: var(--shadow-soft);
     }
 
     .mark {
-      width: 90px;
+      width: 98px;
       height: auto;
       display: block;
     }
 
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2.1rem, 4.8vw, 3.6rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-    }
-
     .eyebrow {
       display: inline-block;
-      margin-bottom: 14px;
+      margin: 0 0 14px;
       padding: 6px 12px;
       border-radius: 999px;
-      background: #fff2f8;
+      background: var(--accent-soft);
       color: var(--accent-dark);
-      font-size: 0.88rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
+      font-size: 0.86rem;
+      font-weight: 850;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.25rem, 5vw, 4.15rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
     }
 
     .subhead {
-      margin: 0 0 12px;
-      color: var(--muted);
-      font-size: 1.06rem;
+      margin: 0 0 16px;
+      color: var(--muted-strong);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      font-weight: 650;
     }
 
     .summary {
       margin: 0;
-      max-width: 62ch;
-      color: #222;
-      font-size: 1rem;
+      max-width: 76ch;
+      color: #25272a;
+      font-size: 1.04rem;
     }
 
-    .section {
-      padding: 0 42px 28px;
-    }
-
-    .section-title {
-      margin: 0 0 14px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .links {
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      margin-top: 28px;
     }
 
-    .links a {
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 46px;
-      padding: 0 16px;
+      padding: 0 17px;
       border-radius: 999px;
       border: 1px solid var(--line);
       background: var(--soft);
       color: var(--text);
       text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      font-weight: 750;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
     }
 
-    .links a.primary {
+    .button.primary {
       background: var(--accent);
       border-color: var(--accent);
       color: #ffffff;
     }
 
-    .links a:hover {
+    .button:hover {
       transform: translateY(-1px);
-      border-color: #d7d9df;
-      background: #f0f1f4;
+      border-color: #d6d8de;
+      background: #eef0f3;
     }
 
-    .links a.primary:hover {
+    .button.primary:hover {
       background: var(--accent-dark);
       border-color: var(--accent-dark);
     }
 
-    .book-grid {
+    .section {
+      padding: 42px 52px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-child { border-bottom: 0; }
+
+    .section-heading {
+      max-width: 82ch;
+      margin-bottom: 22px;
+    }
+
+    .section-kicker {
+      margin: 0 0 6px;
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+    }
+
+    .section-intro {
+      margin: 0 0 24px;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
+    .bio {
+      max-width: 84ch;
+      color: #25272a;
+      font-size: 1.025rem;
+    }
+
+    .bio p { margin: 0 0 18px; }
+    .bio p:last-child { margin-bottom: 0; }
+
+    .link-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .book {
+    .link-grid a {
       display: block;
+      min-height: 96px;
       padding: 18px;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #fff;
+      border-radius: var(--radius-sm);
+      background: var(--bg-soft);
       text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
     }
 
-    .book:hover {
+    .link-grid a:hover {
       transform: translateY(-1px);
-      border-color: #d7d9df;
-      box-shadow: 0 10px 24px rgba(17,17,17,0.06);
+      border-color: rgba(255, 10, 120, 0.3);
+      background: #ffffff;
     }
 
-    .book-title {
-      margin: 0 0 8px;
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1.35;
+    .link-title {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.01em;
     }
 
-    .book-meta {
-      margin: 0;
+    .link-desc {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted-strong);
+      font-size: 0.94rem;
+    }
+
+    .link-url {
+      display: block;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.86rem;
+      overflow-wrap: anywhere;
     }
 
-    .footer {
-      padding: 0 42px 42px;
+    .note {
+      margin: 20px 0 0;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: #2b2b2f;
+      font-size: 0.96rem;
+    }
+
+    .site-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px 20px;
+      padding: 24px 2px 0;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
-    .footer p { margin: 0; }
+    .site-footer p { margin: 0; }
 
-    @media (max-width: 760px) {
-      .page { padding-top: 24px; }
+    @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 22px;
-        padding: 32px 24px 20px;
+        gap: 24px;
+        padding: 38px 24px 30px;
       }
+
       .mark-wrap {
-        width: 108px;
-        height: 108px;
+        width: 118px;
+        height: 118px;
         margin: 0 auto;
       }
-      .section,
-      .footer {
-        padding-left: 24px;
-        padding-right: 24px;
+
+      .mark { width: 86px; }
+      .actions { justify-content: center; }
+      .section { padding: 32px 24px; }
+      .link-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 24px, var(--max));
+        padding-top: 18px;
       }
-      .links a {
-        width: 100%;
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
       }
-      .book-grid {
-        grid-template-columns: 1fr;
+
+      .topnav { justify-content: flex-start; }
+
+      .button,
+      .actions a { width: 100%; }
+
+      .site-footer { padding-bottom: 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -372,67 +548,667 @@
         "author": { "@id": "https://ericposton.com/#person" },
         "inLanguage": "en"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://ericposton.com/#book-1",
+      "name": "Rooted In The Pee Dee: The History Of Poston, South Carolina And Its Founding Family",
+      "url": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ",
+      "author": {
+        "@id": "https://ericposton.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ericposton.com/#postonpreserve"
+      }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://ericposton.com/#book-2",
+      "name": "Honoring the Legacy of Lieutenant Colonel John Fleetwood Moody: Veteran, Aviator, Author",
+      "url": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ",
+      "author": {
+        "@id": "https://ericposton.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ericposton.com/#postonpreserve"
+      }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://ericposton.com/#book-3",
+      "name": "A Poston Family of South Carolina: Its Immigrant Ancestor and Some of His Descendants: Revised, Authenticated & Updated 2025 Edition",
+      "url": "https://play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ",
+      "author": {
+        "@id": "https://ericposton.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ericposton.com/#postonpreserve"
+      }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://ericposton.com/#book-4",
+      "name": "A Poston Family Of South Carolina: Second Edition",
+      "url": "https://books.google.com/books/about/A_Poston_Family_Of_South_Carolina_Second.html?id=rNaDEQAAQBAJ",
+      "author": {
+        "@id": "https://ericposton.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ericposton.com/#postonpreserve"
+      }
+    }
+  ]
+}
   </script>
 </head>
+
 <body>
-  <main class="page">
-    <section class="card" aria-label="Official website landing page">
-      <div class="hero">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="page">
+    <header class="topbar" aria-label="Site header">
+      <a class="brand" href="https://ericposton.com/" aria-label="Eric Chalmers Poston homepage">
+        <img src="/logo-ep.png" alt="" width="34" height="34" decoding="async" />
+        <span>Eric Chalmers Poston</span>
+      </a>
+
+      <nav class="topnav" aria-label="Page navigation">
+        <a href="#profile">Profile</a>
+        <a href="#personal-professional-and-social-profiles">Profiles</a>
+        <a href="#author-books-and-publications">Books</a>
+        <a href="#official-organizations-and-affiliated-sites">Organizations</a>
+        <a href="#creative-music-and-media-profiles">Media</a>
+      </nav>
+    </header>
+
+    <main id="main" class="card">
+      <section class="hero" aria-label="Official website landing page">
         <div class="mark-wrap">
-          <img class="mark" src="ericposton-logo.jpeg" alt="EP monogram logo" />
+          <img class="mark" src="/logo-ep.png" alt="Eric Chalmers Poston monogram logo" width="98" height="98" fetchpriority="high" decoding="sync" />
         </div>
+
         <div>
-          <div class="eyebrow">Official Website</div>
+          <p class="eyebrow">Official Website</p>
           <h1>Eric Chalmers Poston</h1>
-          <p class="subhead">Attorney · Founder · Author · Researcher</p>
+          <p class="subhead">Author · Attorney · South Carolina Native</p>
           <p class="summary">
-            Official website of Eric Chalmers Poston. This page consolidates verified professional profiles, organizations, and selected books authored by Eric Chalmers Poston.
+            Official website and public link index for Eric Chalmers Poston, an American author, attorney, and South Carolina native whose writing focuses on family history, local heritage, and the documentary record of the Pee Dee region.
+          </p>
+
+          <div class="actions" aria-label="Primary actions">
+            <a class="button primary" href="https://www.linkedin.com/in/realericposton" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+            <a class="button" href="https://x.com/realericposton" target="_blank" rel="me noopener noreferrer">X</a>
+            <a class="button" href="https://www.instagram.com/realericposton/" target="_blank" rel="me noopener noreferrer">Instagram</a>
+            <a class="button" href="https://www.chalmersposton.com/" target="_blank" rel="me noopener noreferrer">Chalmers Poston</a>
+            <a class="button" href="https://www.postonpreserve.com/" target="_blank" rel="me noopener noreferrer">Poston Preserve</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile" class="section" aria-labelledby="profile-title">
+        <div class="section-heading">
+          <p class="section-kicker">Canonical Profile</p>
+          <h2 id="profile-title">Author, Attorney & South Carolina Historical Researcher</h2>
+        </div>
+
+        <div class="bio">
+          <p>
+            Eric Chalmers Poston is an American author, attorney, and South Carolina native whose writing focuses on family history, local heritage, and the documentary record of the Pee Dee region. His work examines the Poston family of South Carolina, the history of Poston, South Carolina, and the broader relationship between genealogy, land, memory, and regional identity.
+          </p>
+
+          <p>
+            A graduate of Duke University and the University of Virginia School of Law, Poston brings a lawyer’s attention to evidence, chronology, and documentary detail to his historical writing. His books and archival projects are grounded in family records, public documents, newspaper accounts, photographs, and inherited local knowledge, with a particular interest in preserving the stories of South Carolina families and communities whose histories are often scattered across private collections and public archives.
+          </p>
+
+          <p>
+            This page consolidates public websites, social media profiles, publications, professional directories, and affiliated organizations connected with Eric Chalmers Poston.
           </p>
         </div>
-      </div>
 
-      <div class="section">
-        <h2 class="section-title">Verified Profiles & Organizations</h2>
-        <nav class="links" aria-label="Primary links">
-          <a class="primary" href="https://www.chalmersposton.com/" rel="me">Chalmers Poston, LLC</a>
-          <a href="https://www.linkedin.com/in/realericposton" rel="me">LinkedIn</a>
-          <a href="https://x.com/realericposton" rel="me">X</a>
-          <a href="https://www.instagram.com/realericposton" rel="me">Instagram</a>
-          <a href="https://www.facebook.com/realericposton" rel="me">Facebook</a>
-          <a href="https://thepostonfoundation.org" rel="me">The Poston Foundation</a>
-          <a href="https://chakhead.com" rel="me">Chakhead</a>
-          <a href="https://postonpreserve.com" rel="me">Poston Preserve</a>
-        </nav>
-      </div>
+        <p class="note">
+          For identity-disambiguation and search-indexing purposes, this page uses Eric Chalmers Poston as the canonical name and treats stage, organization, publication, and directory links as connected public references rather than replacement names.
+        </p>
+      </section>
 
-      <div class="section">
-        <h2 class="section-title">Google Books & Publications</h2>
-        <div class="book-grid" aria-label="Books by Eric Chalmers Poston">
-          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ">
-            <p class="book-title">Rooted In The Pee Dee: The History Of Poston, South Carolina And Its Founding Family</p>
-            <p class="book-meta">Google Play Books</p>
-          </a>
-          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ">
-            <p class="book-title">Honoring the Legacy of Lieutenant Colonel John Fleetwood Moody: Veteran, Aviator, Author</p>
-            <p class="book-meta">Google Play Books</p>
-          </a>
-          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ">
-            <p class="book-title">A Poston Family of South Carolina: Its Immigrant Ancestor and Some of His Descendants: Revised, Authenticated &amp; Updated 2025 Edition</p>
-            <p class="book-meta">Google Books</p>
-          </a>
-          <a class="book" href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Esq_A_Poston_Family_of_South?id=rNaDEQAAQBAJ">
-            <p class="book-title">A Poston Family Of South Carolina (Second Edition): A Family Genealogy — Second Edition, Revised, Authenticated, and Updated (2025)</p>
-            <p class="book-meta">Google Play Books</p>
-          </a>
+      
+      <section id="personal-professional-and-social-profiles" class="section link-section" aria-labelledby="personal-professional-and-social-profiles-title">
+        <div class="section-heading">
+          <p class="section-kicker">Link Set 1</p>
+          <h2 id="personal-professional-and-social-profiles-title">Personal, Professional &amp; Social Profiles</h2>
         </div>
-      </div>
+        <ul class="link-grid" aria-label="Personal, Professional &amp; Social Profiles">
+          
+          <li>
+            <a href="https://ericposton.com/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Official Website</span>
+              <span class="link-desc">Canonical personal site</span>
+              <span class="link-url">ericposton.com/</span>
+            </a>
+          </li>
 
-      <div class="footer">
-        <p>Columbia, South Carolina</p>
-      </div>
-    </section>
-  </main>
+          <li>
+            <a href="https://www.linkedin.com/in/realericposton" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">LinkedIn</span>
+              <span class="link-desc">Professional profile</span>
+              <span class="link-url">www.linkedin.com/in/realericposton</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/postonforamerica" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">LinkedIn — alternate public result</span>
+              <span class="link-desc">Additional public LinkedIn result</span>
+              <span class="link-url">www.linkedin.com/in/postonforamerica</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://x.com/realericposton" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">X / Twitter</span>
+              <span class="link-desc">@realericposton</span>
+              <span class="link-url">x.com/realericposton</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/realericposton/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Instagram</span>
+              <span class="link-desc">@realericposton</span>
+              <span class="link-url">www.instagram.com/realericposton/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.facebook.com/postonforamerica/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Facebook</span>
+              <span class="link-desc">@postonforamerica</span>
+              <span class="link-url">www.facebook.com/postonforamerica/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.facebook.com/realericposton" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Facebook — alternate public link</span>
+              <span class="link-desc">@realericposton</span>
+              <span class="link-url">www.facebook.com/realericposton</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://IMDb.me/ericposton" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">IMDb</span>
+              <span class="link-desc">Public profile</span>
+              <span class="link-url">IMDb.me/ericposton</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.imdb.com/name/nm11939765/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">IMDb — direct profile</span>
+              <span class="link-desc">Ducati James / Eric Poston profile</span>
+              <span class="link-url">www.imdb.com/name/nm11939765/</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section id="author-books-and-publications" class="section link-section" aria-labelledby="author-books-and-publications-title">
+        <div class="section-heading">
+          <p class="section-kicker">Link Set 2</p>
+          <h2 id="author-books-and-publications-title">Author, Books &amp; Publications</h2>
+        </div>
+        <ul class="link-grid" aria-label="Author, Books &amp; Publications">
+          
+          <li>
+            <a href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Google Play Books</span>
+              <span class="link-desc">Rooted In The Pee Dee</span>
+              <span class="link-url">play.google.com/store/books/details/Eric_Chalmers_Poston_Rooted_In_The_Pee_Dee?id=J73GEQAAQBAJ</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Google Play Books</span>
+              <span class="link-desc">Honoring the Legacy of Lieutenant Colonel John Fleetwood Moody</span>
+              <span class="link-url">play.google.com/store/books/details/Eric_Chalmers_Poston_Honoring_the_Legacy_of_Lieute?id=WnHKEQAAQBAJ</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Google Play Books</span>
+              <span class="link-desc">A Poston Family of South Carolina — Revised, Authenticated &amp; Updated</span>
+              <span class="link-url">play.google.com/store/books/details/Eric_Chalmers_Poston_A_Poston_Family_of_South_Caro?id=L1jGEQAAQBAJ</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://play.google.com/store/books/details/Eric_Chalmers_Poston_Esq_A_Poston_Family_of_South?id=rNaDEQAAQBAJ" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Google Play Books</span>
+              <span class="link-desc">A Poston Family Of South Carolina — Second Edition</span>
+              <span class="link-url">play.google.com/store/books/details/Eric_Chalmers_Poston_Esq_A_Poston_Family_of_South?id=rNaDEQAAQBAJ</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://books.google.com/books/about/A_Poston_Family_Of_South_Carolina_Second.html?id=rNaDEQAAQBAJ" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Google Books</span>
+              <span class="link-desc">A Poston Family Of South Carolina — Second Edition</span>
+              <span class="link-url">books.google.com/books/about/A_Poston_Family_Of_South_Carolina_Second.html?id=rNaDEQAAQBAJ</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://books.google.com/books/about/Honoring_the_Legacy_of_Lieutenant_Colone.html?id=WnHKEQAAQBAJ" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Google Books</span>
+              <span class="link-desc">Honoring the Legacy of Lieutenant Colonel John Fleetwood Moody</span>
+              <span class="link-url">books.google.com/books/about/Honoring_the_Legacy_of_Lieutenant_Colone.html?id=WnHKEQAAQBAJ</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.amazon.com/Poston-Family-South-Carolina-Authenticated-ebook/dp/B0GTQLVWXW" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Amazon</span>
+              <span class="link-desc">A Poston Family of South Carolina</span>
+              <span class="link-url">www.amazon.com/Poston-Family-South-Carolina-Authenticated-ebook/dp/B0GTQLVWXW</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.postonpreserve.com/a-poston-family-of-south-carolina-poston-preserve" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Poston Preserve</span>
+              <span class="link-desc">A Poston Family of South Carolina book page</span>
+              <span class="link-url">www.postonpreserve.com/a-poston-family-of-south-carolina-poston-preserve</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.postonpreserve.com/history-of-poston-south-carolina" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Poston Preserve</span>
+              <span class="link-desc">Rooted In The Pee Dee / Poston, South Carolina history page</span>
+              <span class="link-url">www.postonpreserve.com/history-of-poston-south-carolina</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section id="official-organizations-and-affiliated-sites" class="section link-section" aria-labelledby="official-organizations-and-affiliated-sites-title">
+        <div class="section-heading">
+          <p class="section-kicker">Link Set 3</p>
+          <h2 id="official-organizations-and-affiliated-sites-title">Official Organizations &amp; Affiliated Sites</h2>
+        </div>
+        <ul class="link-grid" aria-label="Official Organizations &amp; Affiliated Sites">
+          
+          <li>
+            <a href="https://www.chalmersposton.com/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chalmers Poston, LLC</span>
+              <span class="link-desc">Law firm</span>
+              <span class="link-url">www.chalmersposton.com/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.thepostonfoundation.org/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Foundation</span>
+              <span class="link-desc">Foundation website</span>
+              <span class="link-url">www.thepostonfoundation.org/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.thepostonfoundation.org/about-the-poston-foundation-eric-chalmers-poston" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Foundation</span>
+              <span class="link-desc">Eric Chalmers Poston profile page</span>
+              <span class="link-url">www.thepostonfoundation.org/about-the-poston-foundation-eric-chalmers-poston</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.postonpreserve.com/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Preserve</span>
+              <span class="link-desc">Family heritage and conservation site</span>
+              <span class="link-url">www.postonpreserve.com/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.postonpreserve.com/poston-family-legacy" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Preserve</span>
+              <span class="link-desc">Poston family legacy page</span>
+              <span class="link-url">www.postonpreserve.com/poston-family-legacy</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://johnfleetwoodmoody.com/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">John Fleetwood Moody</span>
+              <span class="link-desc">Family memorial and literary legacy site</span>
+              <span class="link-url">johnfleetwoodmoody.com/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://chakhead.com/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead</span>
+              <span class="link-desc">Record label / marketing / artist management company</span>
+              <span class="link-url">chakhead.com/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://chakhead.com/about-chakhead-clique-music-group/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead</span>
+              <span class="link-desc">About Chakhead, LLC</span>
+              <span class="link-url">chakhead.com/about-chakhead-clique-music-group/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://chakhead.com/artists-fleetwood-ducati-james/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead</span>
+              <span class="link-desc">Fleetwood x Ducati James artist page</span>
+              <span class="link-url">chakhead.com/artists-fleetwood-ducati-james/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.ducatijames.com/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Ducati James</span>
+              <span class="link-desc">Artist website</span>
+              <span class="link-url">www.ducatijames.com/</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section id="organization-social-media" class="section link-section" aria-labelledby="organization-social-media-title">
+        <div class="section-heading">
+          <p class="section-kicker">Link Set 4</p>
+          <h2 id="organization-social-media-title">Organization Social Media</h2>
+        </div>
+        <ul class="link-grid" aria-label="Organization Social Media">
+          
+          <li>
+            <a href="https://www.twitter.com/chalmersposton" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chalmers Poston</span>
+              <span class="link-desc">X / Twitter</span>
+              <span class="link-url">www.twitter.com/chalmersposton</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.facebook.com/thepostonfoundation" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Foundation</span>
+              <span class="link-desc">Facebook</span>
+              <span class="link-url">www.facebook.com/thepostonfoundation</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/thepostonfoundation" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Foundation</span>
+              <span class="link-desc">Instagram</span>
+              <span class="link-url">www.instagram.com/thepostonfoundation</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.youtube.com/@thepostonfoundation" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Foundation</span>
+              <span class="link-desc">YouTube</span>
+              <span class="link-url">www.youtube.com/@thepostonfoundation</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://x.com/postonfdn" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Foundation</span>
+              <span class="link-desc">X / Twitter</span>
+              <span class="link-url">x.com/postonfdn</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.yelp.com/biz/the-poston-foundation-columbia-3" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Foundation</span>
+              <span class="link-desc">Yelp</span>
+              <span class="link-url">www.yelp.com/biz/the-poston-foundation-columbia-3</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.facebook.com/postonpreserve/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Preserve</span>
+              <span class="link-desc">Facebook</span>
+              <span class="link-url">www.facebook.com/postonpreserve/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/postonpreserve/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Preserve</span>
+              <span class="link-desc">Instagram</span>
+              <span class="link-url">www.instagram.com/postonpreserve/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://x.com/poston_preserve" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Preserve</span>
+              <span class="link-desc">X / Twitter</span>
+              <span class="link-url">x.com/poston_preserve</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.youtube.com/@postonpreserve" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">The Poston Preserve</span>
+              <span class="link-desc">YouTube</span>
+              <span class="link-url">www.youtube.com/@postonpreserve</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://soundcloud.com/chakhead" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead</span>
+              <span class="link-desc">SoundCloud</span>
+              <span class="link-url">soundcloud.com/chakhead</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://facebook.com/ak47drip" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead</span>
+              <span class="link-desc">Facebook</span>
+              <span class="link-url">facebook.com/ak47drip</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://x.com/chakhead" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead</span>
+              <span class="link-desc">X / Twitter</span>
+              <span class="link-url">x.com/chakhead</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://instagram.com/ak47drip" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead</span>
+              <span class="link-desc">Instagram</span>
+              <span class="link-url">instagram.com/ak47drip</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://youtube.com/@chakhead" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead</span>
+              <span class="link-desc">YouTube</span>
+              <span class="link-url">youtube.com/@chakhead</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/company/chakheadcliquemusicgroup/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead Clique Music Group</span>
+              <span class="link-desc">LinkedIn company page</span>
+              <span class="link-url">www.linkedin.com/company/chakheadcliquemusicgroup/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.yelp.com/biz/chakhead-columbia-5" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Chakhead</span>
+              <span class="link-desc">Yelp</span>
+              <span class="link-url">www.yelp.com/biz/chakhead-columbia-5</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section id="creative-music-and-media-profiles" class="section link-section" aria-labelledby="creative-music-and-media-profiles-title">
+        <div class="section-heading">
+          <p class="section-kicker">Link Set 5</p>
+          <h2 id="creative-music-and-media-profiles-title">Creative, Music &amp; Media Profiles</h2>
+        </div>
+        <ul class="link-grid" aria-label="Creative, Music &amp; Media Profiles">
+          
+          <li>
+            <a href="https://open.spotify.com/artist/3c5RgU5tRBanUydG6t2Q44" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Ducati James</span>
+              <span class="link-desc">Spotify artist profile</span>
+              <span class="link-url">open.spotify.com/artist/3c5RgU5tRBanUydG6t2Q44</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.deezer.com/us/artist/15359219" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Ducati James</span>
+              <span class="link-desc">Deezer artist profile</span>
+              <span class="link-url">www.deezer.com/us/artist/15359219</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://tidal.com/artist/10076932" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Ducati James</span>
+              <span class="link-desc">Tidal artist profile</span>
+              <span class="link-url">tidal.com/artist/10076932</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://genius.com/artists/Ducati-james" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Ducati James</span>
+              <span class="link-desc">Genius artist page</span>
+              <span class="link-url">genius.com/artists/Ducati-james</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://x.com/realducatijames" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Ducati James</span>
+              <span class="link-desc">X / Twitter</span>
+              <span class="link-url">x.com/realducatijames</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/realducatijames" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Ducati James</span>
+              <span class="link-desc">Instagram</span>
+              <span class="link-url">www.instagram.com/realducatijames</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.youtube.com/@realducatijames" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Ducati James</span>
+              <span class="link-desc">YouTube</span>
+              <span class="link-url">www.youtube.com/@realducatijames</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://musicbrainz.org/label/8d941928-3c3e-4c7f-ab11-9ca637ab0258" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">MusicBrainz</span>
+              <span class="link-desc">Chakhead, LLC label page</span>
+              <span class="link-url">musicbrainz.org/label/8d941928-3c3e-4c7f-ab11-9ca637ab0258</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://musicbrainz.org/release/481bf765-f9fb-4650-85e0-80936a20ef0e/details" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">MusicBrainz</span>
+              <span class="link-desc">Y L F R L F R release page</span>
+              <span class="link-url">musicbrainz.org/release/481bf765-f9fb-4650-85e0-80936a20ef0e/details</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://sccriminallaws.com/podcasts/episode-10-eric-poston-a-k-k-ducati-james/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Direct Examination Podcast</span>
+              <span class="link-desc">Episode 10 — Eric Poston a.k.a. Ducati James</span>
+              <span class="link-url">sccriminallaws.com/podcasts/episode-10-eric-poston-a-k-k-ducati-james/</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section id="legal-directories-and-public-professional-references" class="section link-section" aria-labelledby="legal-directories-and-public-professional-references-title">
+        <div class="section-heading">
+          <p class="section-kicker">Link Set 6</p>
+          <h2 id="legal-directories-and-public-professional-references-title">Legal Directories &amp; Public Professional References</h2>
+        </div>
+        <ul class="link-grid" aria-label="Legal Directories &amp; Public Professional References">
+          
+          <li>
+            <a href="https://www.lawyers.com/columbia/south-carolina/eric-poston-169131430-a/" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Lawyers.com</span>
+              <span class="link-desc">Eric Chalmers Poston attorney profile</span>
+              <span class="link-url">www.lawyers.com/columbia/south-carolina/eric-poston-169131430-a/</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.avvo.com/attorneys/29201-sc-eric-poston-4774572.html" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Avvo</span>
+              <span class="link-desc">Eric Chalmers Poston attorney profile</span>
+              <span class="link-url">www.avvo.com/attorneys/29201-sc-eric-poston-4774572.html</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://lawyers.findlaw.com/profile/view/5020627_1" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">FindLaw</span>
+              <span class="link-desc">Eric Chalmers Poston attorney profile</span>
+              <span class="link-url">lawyers.findlaw.com/profile/view/5020627_1</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://law.justia.com/cases/federal/appellate-courts/ca4/19-2157/19-2157-2021-03-02.html" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">Justia</span>
+              <span class="link-desc">Fourth Circuit case reference</span>
+              <span class="link-url">law.justia.com/cases/federal/appellate-courts/ca4/19-2157/19-2157-2021-03-02.html</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.bcgsearch.com/bestlawfirms/KrAv1/Chalmers-Poston/rankings" target="_blank" rel="me noopener noreferrer">
+              <span class="link-title">BCGSearch</span>
+              <span class="link-desc">Chalmers Poston law firm profile</span>
+              <span class="link-url">www.bcgsearch.com/bestlawfirms/KrAv1/Chalmers-Poston/rankings</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <p>© <span id="year">2026</span> Eric Chalmers Poston. All rights reserved.</p>
+      <p>South Carolina</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
